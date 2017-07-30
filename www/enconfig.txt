@@ -1,0 +1,20 @@
+﻿[server]
+icecast
+
+[link_stream]
+http://free.radioheart.ru:8000/DronFm
+
+[link_statistic_stream]
+http://free.radioheart.ru:8000/.xsl?mount=/DronFm
+
+[link_statistic_nonstop, "no" - off_nonstop]
+http://free.radioheart.ru:8000/status.xsl?mount=/DronFm
+
+[autorun]
+no
+
+[style]
+1
+
+[start_volume]
+50
