@@ -1,14 +1,14 @@
-﻿[server]
+[server]
 icecast
 
 [link_stream]
-http://free.radioheart.ru:8000/DronFm
+http://s0.radioheart.ru:8000/RH3239
 
 [link_statistic_stream]
-http://free.radioheart.ru:8000/.xsl?mount=/DronFm
+http://s0.radioheart.ru:8000/.xsl?mount=/RH3239
 
 [link_statistic_nonstop, "no" - off_nonstop]
-http://free.radioheart.ru:8000/status.xsl?mount=/DronFm
+http://s0.radioheart.ru:8000/status.xsl?mount=/RH3239
 
 [autorun]
 no
