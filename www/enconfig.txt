@@ -2,13 +2,13 @@
 icecast
 
 [link_stream]
-http://s0.radioheart.ru:8000/RH3239
+http://s0.radioheart.ru:8000/RH20662
 
 [link_statistic_stream]
-http://s0.radioheart.ru:8000/.xsl?mount=/RH3239
+http://s0.radioheart.ru:8000/.xsl?mount=/RH20662
 
 [link_statistic_nonstop, "no" - off_nonstop]
-http://s0.radioheart.ru:8000/status.xsl?mount=/RH3239
+http://s0.radioheart.ru:8000/status.xsl?mount=/RH20662
 
 [autorun]
 no
