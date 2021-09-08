@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script>
+ var mountpoint = "/RH20662";
+ var mountpoint2 = "/nonstop";//нонстоп
+ var nac = true;
+ var counter=0;
+ var url = "http://s0.radioheart.ru:8000/json_new.xsl?"; //наш url к json в папке Web
+ var url2 = url;
+ url+= "mount=" + mountpoint + "&callback=";
+ url2+="mount=" + mountpoint2 + "&callback=";
+
+ function parseMusic(results)
+ {
+ for (var n in results){
+ var nm = results[n];
+ if(nm["title"] && nac){
+ nac = false;
+  $('#stream_name').text('Название станции: '+nm["name"]);
+  $('#stream_description').text('Описание станции: '+nm["description"]);
+  $('#stream_song').text('Сейчас в эфире: '+nm["title"]);
+  $('#stream_listenters').text('Слушателей: '+nm["listeners"]);
+ }
+ }
+ }
+ var span;
+ var script;
+ $.ajaxSetup({ scriptCharset: "utf-8" , contentType: "application/json; charset=utf-8"});
+ function initMusic()
+ {
+ span = document.createElement("span");
+ span.id="getscript";
+ document.body.appendChild(span);
+ script = document.createElement("script");
+ script.type="text/javascript";
+ script.charset="UTF-8";
+ }
+ function addMusic()
+ {
+ nac = true;
+ $('#getscript').empty();
+ script.src = url + counter;
+ $('#getscript').append(script);
+ script.src = url2 + counter;
+ $('#getscript').append(script);
+ }
+ function updateMusic()
+ {
+ counter=counter+1;
+ addMusic();
+ }
+
+ $(document).ready(
+ function () {
+ initMusic();
+ addMusic();
+ setInterval('updateMusic()', 30000 );
+ });
+ </script>
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="http://dronmc-moskva.ucoz.ru/favicon.ico">
+  <meta charset="utf-8">
+  <title>Radio DronFM</title>
+  <link type="text/css" rel="stylesheet" href="Beta v0.2 new.css" />
+ </head>
+  
+  <body>
+<center>
+  
+<table border="0" cellpadding="0" cellspacing="0" style="height:72px;width:715px;">
+  <tbody>
+    <tr>
+      <td background="imege/Шаблон-Beta-v0.2-new_01.png";></td>
+    </tr>
+  </tbody>
+</table>
+    
+    <table border="0" cellpadding="0" cellspacing="0" style="height:54px;width:715px;">
+  <tbody>
+    <tr>
+      <td background="imege/Шаблон-Beta-v0.2-new_02.png";></td>
+    </tr>
+  </tbody>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="width:715px;">
+  <tbody>
+    <tr>
+      <td background="imege/Шаблон-Beta-v0.2-new_03.png"; style="width: 63px; height: 531px";></td>
+      
+            <td background="imege/Шаблон-Beta-v0.2-new_04.png"; style="width: 589px; height: 531px; text-align: center; vertical-align: middle";>
+              
+<div style="text-align: center;"><span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;">Приятного Прослушивания :)э</span></strong></span></span></div><br><br>
+              
+
+              <audio controls="" autoplay="" name="media"><source src="http://s0.radioheart.ru:8000/RH20662" type="audio/mpeg"></audio>
+<br><br>
+                <span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;"><div id="stream_name"></div></span></strong></span></span>
+                <span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;"><div id="stream_name"><div id="stream_description"></div></div></span></strong></span></span>
+                <span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;"><div id="stream_song"></div></div></span></strong></span></span>
+                <span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;"><div id="stream_listenters"></div></div></span></strong></span></span>
+
+<br><br><br>
+
+<div style="text-align: center;"><span style="color:#ffd700;"><span style="font-family:Comic Sans MS,cursive;"><strong><span style="font-size:18px;">Наши Партнёры:)э</span></strong></span></span></div><br><br>
+
+
+<br>
+
+
+
+
+             
+<center><a href="http://august4u4.ru" target="_blank"><img align="absmiddle" src="http://august4u4.ru/banner/TOP_august4u4.ru_468x60.gif" alt="" style="border-width: 2px; border-style: solid; border-color: rgb(199, 21, 133);box-shadow: 0 0 5px 2px #000000;"></a></center>
+
+
+            </td>
+
+      <td background="imege/Шаблон-Beta-v0.2-new_05.png"; style="width: 63px; height: 531px";></td>
+    </tr>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="width:715px";>
+  <tbody>
+    <tr>
+      <td background="imege/Шаблон-Beta-v0.2-new_06.png"; style="width: 715px; height: 73px";></td>
+    </tr>
+  </tbody>
+</table>
+
+  </tbody>
+</table>
+   
+  
+
+</center>
+
+
+
+
+
+  
+ </body>
+</html>
+
